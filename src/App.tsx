@@ -10,6 +10,7 @@ import {
   Tech,
   Works,
   StarsCanvas,
+  Chatbot,
 } from "./components";
 import { useEffect } from "react";
 import { config } from "./constants/config";
@@ -37,6 +38,7 @@ const App = () => {
           <Contact />
           <StarsCanvas />
         </div>
+        <Chatbot />
       </div>
     </BrowserRouter>
   );

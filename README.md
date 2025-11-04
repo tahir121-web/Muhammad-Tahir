@@ -180,10 +180,9 @@ your local machine.
 
 **Step 0:**
 
-Note :bangbang: the application uses EmailJS in order to send emails using client-side, therefore,
-you need to create EmailJS account [here](https://emailjs.com/) and sets the
-`VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, and `VITE_EMAIL_JS_ACCESS_TOKEN` environment
-variables in `.env` file.
+Note :bangbang: the application uses EmailJS and OpenAI API, therefore:
+- Create an EmailJS account [here](https://emailjs.com/) and set the `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, and `VITE_EMAILJS_ACCESS_TOKEN` environment variables in `.env` file.
+- Get your OpenAI API key from [OpenAI Platform](https://platform.openai.com/api-keys) and set the `VITE_OPENAI_API_KEY` environment variable in `.env` file.
 
 **Step 1:**
 
@@ -234,8 +233,8 @@ Environment variables[^3] can be used for configuration. They must be set before
 > [Environment variables](https://en.wikipedia.org/wiki/Environment_variable) are variables that are
 > set in the operating system or shell, typically used to configure programs.
 
-**React.js 18 3D Portfolio** uses [EmailJS](https://www.emailjs.com/) as external service. You need
-to create an account and get the required credentials to run the app.
+**React.js 18 3D Portfolio** uses [EmailJS](https://www.emailjs.com/) and [OpenAI API](https://platform.openai.com/) as external services. You need
+to create accounts and get the required credentials to run the app.
 
 Create a `.env` file in the root directory of the project and add the following environment
 variables:
@@ -243,8 +242,17 @@ variables:
 ```env
 VITE_EMAILJS_SERVICE_ID=<VITE_EMAILJS_SERVICE_ID>
 VITE_EMAILJS_TEMPLATE_ID=<VITE_EMAILJS_TEMPLATE_ID>
-VITE_EMAIL_JS_ACCESS_TOKEN=<VITE_EMAIL_JS_ACCESS_TOKEN>
+VITE_EMAILJS_ACCESS_TOKEN=<VITE_EMAILJS_ACCESS_TOKEN>
+
+# OpenAI API Key for AI Chatbot
+VITE_OPENAI_API_KEY=<YOUR_OPENAI_API_KEY>
 ```
+
+To get your OpenAI API key:
+1. Visit [OpenAI Platform](https://platform.openai.com/api-keys)
+2. Sign in with your OpenAI account
+3. Create a new API key
+4. Copy the key and add it to your `.env` file
 
 ## 🚀 Deployment
 
