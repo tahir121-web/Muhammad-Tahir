@@ -22,6 +22,21 @@ const Chatbot = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
+  // Check API key availability
+  useEffect(() => {
+    console.log('Chatbot component mounted');
+    const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
+    if (!apiKey) {
+      console.warn('OpenAI API key not found. Chatbot will not function properly.');
+      // Update initial message to inform user
+      setMessages([{
+        role: 'assistant',
+        content: "Hi! I'm an AI assistant for Muhammad Tahir's portfolio. However, the API key is not configured in this deployment. Please contact Muhammad Tahir directly for inquiries.",
+        timestamp: new Date(),
+      }]);
+    }
+  }, []);
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -52,6 +67,12 @@ const Chatbot = () => {
     setIsLoading(true);
 
     try {
+      // Check if API key is available
+      const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
+      if (!apiKey) {
+        throw new Error('OpenAI API key is not configured. Please set VITE_OPENAI_API_KEY environment variable.');
+      }
+
       // Convert messages to conversation history format
       const conversationHistory: Array<{ role: 'user' | 'assistant'; content: string }> = messages.map((msg) => ({
         role: (msg.role === 'assistant' ? 'assistant' : 'user') as 'user' | 'assistant',
@@ -94,10 +115,11 @@ const Chatbot = () => {
       {/* Chat Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#915EFF] text-white shadow-lg transition-all hover:bg-[#7c4dff] hover:scale-110"
+        className="fixed bottom-6 right-6 z-[9999] flex h-14 w-14 items-center justify-center rounded-full bg-[#915EFF] text-white shadow-lg transition-all hover:bg-[#7c4dff] hover:scale-110"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         aria-label="Toggle chat"
+        style={{ zIndex: 9999 }}
       >
         {isOpen ? (
           <svg
@@ -139,7 +161,8 @@ const Chatbot = () => {
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="fixed bottom-24 right-6 z-50 flex h-[500px] w-[380px] flex-col rounded-2xl bg-black-200 border border-[#915EFF]/30 shadow-2xl overflow-hidden"
+            className="fixed bottom-24 right-6 z-[9999] flex h-[500px] w-[380px] flex-col rounded-2xl bg-black-200 border border-[#915EFF]/30 shadow-2xl overflow-hidden"
+            style={{ zIndex: 9999 }}
           >
             {/* Header */}
             <div className="bg-gradient-to-r from-[#915EFF] to-[#7c4dff] p-4 flex items-center justify-between">
