@@ -5,7 +5,7 @@ import { styles } from "../../constants/styles";
 import { navLinks } from "../../constants";
 import { logo, menu, close, github } from "../../assets";
 import { LinkedInIcon } from "../../components/atoms";
-import { config } from "../../constants/config";
+
 
 const Navbar = () => {
   const [active, setActive] = useState<string | null>();
@@ -67,7 +67,7 @@ const Navbar = () => {
         >
           <img src={logo} alt="logo" className="h-9 w-9 rounded-full object-cover border border-[#915EFF]" />
           <p className="flex cursor-pointer text-[18px] font-bold text-white ">
-            {config.html.fullName}
+            Muhammad Tahir
             <span className="inline-flex items-center justify-center ml-2 bg-blue-500 text-white rounded-full w-5 h-5 text-xs font-bold">✓</span>
           </p>
         </Link>

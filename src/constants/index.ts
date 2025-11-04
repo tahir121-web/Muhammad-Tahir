@@ -106,9 +106,23 @@ const technologies: TTechnology[] = [
 
 const experiences: TExperience[] = [
   {
+    title: "Founder & CEO",
+    companyName: "MA Digital Marketing Agency",
+    icon: web,
+    iconBg: "#383E56",
+    date: "Current",
+    points: [
+      "Leading a digital marketing agency specializing in web development and AI solutions for clients including RTEETECH and Awisee.com.",
+      "Collaborating with premium websites like Forbes.com to deliver cutting-edge digital experiences.",
+      "Providing Full-Stack Web Development: Scalable MERN stack solutions for business platforms, portals, and SaaS products.",
+      "Creating AI-Powered Chatbots & Automation: Custom chatbots (GPT, NLP) to automate support, lead generation, and customer engagement.",
+      "Building 3D & Interactive Interfaces: Modern, immersive UI with Three.js, React Three Fiber, and tailored animations.",
+    ],
+  },
+  {
     title: "Freelance MERN Stack & AI Chatbot Developer",
     companyName: "Available for Remote Projects",
-    icon: web,
+    icon: reactjs,
     iconBg: "#383E56",
     date: "Current",
     points: [
@@ -122,8 +136,8 @@ const experiences: TExperience[] = [
   {
     title: "Full Stack Developer and Chatbot Integrator",
     companyName: "Upwork",
-    icon: reactjs,
-    iconBg: "#383E56",
+    icon: mongodb,
+    iconBg: "#E6DEDD",
     date: "Oct 2025 - Present",
     points: [
       "Developing intelligent web applications and automation solutions for startups and small businesses.",
@@ -135,27 +149,14 @@ const experiences: TExperience[] = [
   {
     title: "MERN Stack Developer Intern",
     companyName: "U Devs",
-    icon: mongodb,
-    iconBg: "#E6DEDD",
+    icon: nodejs,
+    iconBg: "#383E56",
     date: "Sep 2025 - Present",
     points: [
       "Working on full-stack development projects using the MERN stack.",
       "Gaining hands-on experience with real business needs from MVPs to full-scale systems.",
       "Collaborating with senior developers to create efficient, scalable, and user-friendly solutions.",
       "Participating in code reviews and providing constructive feedback to team members.",
-    ],
-  },
-  {
-    title: "Back End Developer Intern",
-    companyName: "CodeAlpha",
-    icon: nodejs,
-    iconBg: "#383E56",
-    date: "Sep 2025 - Present",
-    points: [
-      "Focused on backend development, working with server-side technologies, APIs, and databases.",
-      "Building and optimizing efficient backend systems for various applications.",
-      "Learning industry best practices for backend architecture and database design.",
-      "Collaborating with frontend developers to integrate backend services with user interfaces.",
     ],
   },
 ];
