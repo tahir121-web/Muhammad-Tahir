@@ -266,10 +266,21 @@ npm run build
 
 #### Deploy on Vercel (recommended)
 
-The easiest way to deploy this Next.js app is to use the
-[Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
+The easiest way to deploy this React app is to use the
+[Vercel Platform](https://vercel.com/new).
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fladunjexa%2Freactjs18-3d-portfolio)
+**Steps to deploy on Vercel:**
+
+1. Import your repository to Vercel
+2. Set the following environment variables in Vercel project settings:
+   - `VITE_BASE_PATH` = `/` (for Vercel, leave empty or set to `/`)
+   - `VITE_OPENAI_API_KEY` = Your OpenAI API key
+   - `VITE_EMAILJS_SERVICE_ID` = Your EmailJS service ID
+   - `VITE_EMAILJS_TEMPLATE_ID` = Your EmailJS template ID
+   - `VITE_EMAILJS_ACCESS_TOKEN` = Your EmailJS access token
+3. Vercel will automatically detect Vite and deploy
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ftahir121-web%2FMuhammad-Tahir)
 
 #### Deploy on Netlify
 
